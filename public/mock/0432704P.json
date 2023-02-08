@@ -1,0 +1,122 @@
+{
+    "code": "0432704P",
+    "breadcrumbList": [
+        {
+            "link": "/en/cat/home-pets-DC0000001.html",
+            "name": "Home & Pets"
+        },
+        {
+            "link": "/en/cat/home-pets/appliances-DC0000592.html",
+            "name": "Appliances"
+        },
+        {
+            "link": "/en/cat/home-pets/appliances/kitchen-appliances-DC0000612.html",
+            "name": "Kitchen Appliances"
+        },
+        {
+            "link": "/en/cat/home-pets/appliances/kitchen-appliances/food-mixers-accessories-DC0000635.html",
+            "name": "Food Mixers & Accessories"
+        },
+        {
+            "link": "/en/cat/home-pets/appliances/kitchen-appliances/food-mixers-accessories/stand-mixers-DC0000654.html",
+            "name": "Stand Mixers"
+        }
+    ],
+    "images": [
+        {
+            "altText": "KitchenAid® Ultra Power Tilt-Head Stand Mixer w/ 10 Speeds, Empire Red, 4.5qt",
+            "url": "https://media-www.canadiantire.ca/product/living/kitchen/kitchen-appliances/0432704/kitchenaid-red-ultra-mixer-acc126b7-9e5b-43ba-a7fa-eefdfbd51f6a.png"
+        }
+    ],
+    "name": "KitchenAid® Ultra Power Tilt-Head Stand Mixer w/ 10 Speeds, Empire Red, 4.5qt",
+    "averageRating": 4.8397,
+    "numberOfReviews": 1242,
+    "skus": [
+        {
+            "code": "001",
+            "optionIds": [1, 3]
+        },
+        {
+            "code": "002",
+            "optionIds": [1, 4]
+        },
+        {
+            "code": "003",
+            "optionIds": [1, 5]
+        },
+        {
+            "code": "004",
+            "optionIds": [2, 3]
+        },
+        {
+            "code": "005",
+            "optionIds": [2, 4]
+        },
+        {
+            "code": "006",
+            "optionIds": [2, 5]
+        }
+    ],
+    "options": [
+        {
+            "descriptor": "COLOUR",
+            "display": "Colour",
+            "values": [
+                {
+                    "value": "Red",
+                    "id": 1,
+                    "skuCodes": ["001", "002", "003"]
+                },
+                {
+                    "value": "Blue",
+                    "id": 2,
+                    "skuCodes": ["004", "005", "006"]
+                }
+            ]
+        },
+        {
+            "descriptor": "SIZE",
+            "display": "Size",
+            "values": [
+                {
+                    "value": "Small",
+                    "id": 3,
+                    "skuCodes": ["001", "004"]
+                },
+                {
+                    "value": "Medium",
+                    "id": 4,
+                    "skuCodes": ["002", "005"]
+                },
+                {
+                    "value": "Large",
+                    "id": 5,
+                    "skuCodes": ["003", "006"]
+                }
+            ]
+        }
+    ],
+    "featureBullets": [
+        {
+            "description": "KitchenAid Ultra Power Tilt-Head Stand Mixer allows clear access to the bowl and attached beater or accessory"
+        },
+        { "description": "59-point planetary mixing action provides thorough ingredient incorporation" },
+        { "description": "10 speeds ensure you are ready for any task or recipe" },
+        {
+            "description": "Power hub is designed to use the motor’s power to operate 15 optional attachments from food grinders to pasta makers and more"
+        },
+        {
+            "description": "4.5 quart capacity allows you to make 6 dozen cookies, 3 loaves of bread or 6 pounds of mashed potatoes in a single batch"
+        },
+        { "description": "Includes stainless steel bowl, flat beater, dough hook and wire whip" },
+        { "description": "Colour: Empire Red" }
+    ],
+    "brand": { "label": "KitchenAid", "url": null },
+    "originalPrice": {
+        "value": 349.99
+    },
+    "currentPrice": {
+        "value": 249.99
+    },
+    "priceMessage": "Save $100"
+}

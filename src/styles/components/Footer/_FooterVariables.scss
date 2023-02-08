@@ -1,0 +1,6 @@
+@import '../../variables';
+// @import 'sass:map';
+
+$footer-background: map-get($theme-colors, 'universal-shade-1');
+$footer-primary-font-color: map-get($theme-colors, 'universal-shade-8');
+$footer-secondary-font-color: map-get($theme-colors, 'universal-shade-5');

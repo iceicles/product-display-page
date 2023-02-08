@@ -1,0 +1,71 @@
+@import './variables';
+
+@mixin respond-from($media) {
+    @if $media == xs {
+        @content;
+    } @else {
+        @media (min-width: map-get($grid-breakpoints, $media)) {
+            @content;
+        }
+    }
+}
+
+// generates all col classes for a grid
+@mixin grid-generator($size, $grid-columns, $gutter_width) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$size}-#{$i} {
+            flex-basis: percentage(calc($i / $grid-columns));
+            max-width: percentage(calc($i / $grid-columns));
+            padding-left: $gutter_width * 0.5;
+            padding-right: $gutter_width * 0.5;
+            flex-direction: column;
+        }
+        // offset-num classes
+        .col-#{$size}-offset-#{$i} {
+            margin-left: percentage(calc($i / $grid-columns));
+        }
+    }
+    // equally diving col class
+    .col-#{$size} {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+    }
+}
+
+// general alignment classes
+@mixin alignment-generator($size) {
+    .start-#{$size} {
+        justify-content: flex-start;
+        text-align: start;
+    }
+    .center-#{$size} {
+        justify-content: center;
+        text-align: center;
+    }
+    .end-#{$size} {
+        justify-content: flex-end;
+        text-align: end;
+    }
+    .top-#{$size} {
+        align-items: flex-start;
+    }
+    .middle-#{$size} {
+        align-items: center;
+    }
+    .bottom-#{$size} {
+        align-items: flex-end;
+    }
+    .around-#{$size} {
+        justify-content: space-around;
+    }
+    .between-#{$size} {
+        justify-content: space-between;
+    }
+    .first-#{$size} {
+        order: -1;
+    }
+    .last-#{$size} {
+        order: 1;
+    }
+}

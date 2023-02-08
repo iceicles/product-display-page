@@ -1,0 +1,4 @@
+@import '../../variables';
+// @import 'sass:map';
+
+$product-buybox-sku-color: map-get($theme-colors, 'universal-shade-4');

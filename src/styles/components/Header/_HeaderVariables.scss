@@ -1,0 +1,6 @@
+@import '../../variables';
+// @import 'sass:map';
+
+$header-background: map-get($theme-colors, 'universal-shade-1');
+$header-primary-font-color: map-get($theme-colors, 'universal-shade-8');
+$header-secondary-font-color: map-get($theme-colors, 'universal-shade-5');

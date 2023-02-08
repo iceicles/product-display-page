@@ -1,0 +1,24 @@
+@import '../../variables';
+@import 'BreadcrumbVariables';
+
+.nav__breadcrumbs {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+
+    &--item {
+        &::after {
+            color: $breadcrumb-separator-color;
+            content: '\00a0\00a0/\00a0\00a0';
+        }
+
+        &:last-of-type {
+            color: $breadcrumb-disabled-color;
+            width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

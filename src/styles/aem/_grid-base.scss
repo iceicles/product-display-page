@@ -1,0 +1,171 @@
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2015 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+
+/* grid component */
+
+.aem-Grid::before,
+.aem-Grid::after {
+    display: table;
+    content: ' ';
+}
+
+.aem-Grid::after {
+    clear: both;
+}
+
+
+@mixin gutter-space($breakpoint) {
+    
+    .vehicleselector {
+        padding-left: 0;
+    }
+
+    @if ($breakpoint== phone) {
+        padding-left: $gutter-mobile;
+        padding-right: $gutter-mobile;
+    } @else {
+        padding-left: $gutter-medium-device;
+        padding-right: $gutter-medium-device;
+    }
+}
+
+/* placeholder for new components */
+
+.aem-Grid-newComponent {
+    clear: both;
+    margin: 0;
+}
+
+/* column of a grid */
+
+.aem-GridColumn {
+    box-sizing: border-box;
+    clear: both;
+}
+
+/* force showing hidden */
+
+.aem-GridShowHidden > .aem-Grid > .aem-GridColumn {
+    display: block;
+}
+
+/* Generates all the rules for the grid columns up to the given amount of column */
+@mixin generate-columns($columnTotal, $breakPoint, $column: 1) {
+    @if ($column <= $columnTotal) {
+        @for $i from 1 through $column {
+            > .aem-GridColumn.aem-GridColumn--#{$breakPoint}--#{$i} {
+                float: left;
+                clear: none;
+                width: calc($i * 100% / $column);
+                // flex-basis: percentage($column / $columnTotal);
+                // max-width: percentage($column / $columnTotal);
+                // flex-direction: column;
+                // @include gutter-space($breakPoint);
+                @media (min-width: $mobile-min-width) and (max-width: $tablet-min-width) {
+                    @include gutter-space(phone);
+                }
+                @media (min-width: $tablet-min-width) {
+                    @include gutter-space(default);
+                }
+            }
+            > .responsivegrid.aem-GridColumn.aem-GridColumn--#{$breakPoint}--#{$i},
+            > .dynamicexperiencefragment.aem-GridColumn.aem-GridColumn--#{$breakPoint}--#{$i} {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            > .experiencefragment.aem-no-padding-grid.aem-GridColumn.aem-GridColumn--#{$breakPoint}--#{$i} {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            // TODO commenting no-gutter for testing, this class will be removed by AEM team
+            // > .aem-GridColumn.aem-GridColumn--#{$breakPoint}--#{$i}.no-gutter {
+            //     padding-left: 0;
+            //     padding-right: 0;
+            // }
+           
+        }
+
+        // @include generate-columns($columnTotal, $breakPoint($column + 1));
+    }
+}
+
+/* Generates all the rules for the grid column offset up to the given amount of column */
+@mixin generate-offsets($columnTotal, $breakPoint, $column: 0) {
+    @if ($column <= $columnTotal) {
+        @for $i from 0 through $column {
+            > .aem-GridColumn.aem-GridColumn--offset--#{$breakPoint}--#{$i} {
+                margin-left: calc($i * 100% / $column);
+            }
+        }
+
+        //@include generate-offsets($columnTotal, $breakPoint($column + 1));
+    }
+}
+
+/* Generates all the rules for the grid and columns for the given break point and total of columns */
+@mixin generate-grid-columns($breakPoint, $column, $columnTotal) {
+    @if ($columnTotal > 0) {
+        &.aem-Grid--#{$column} {
+            @include generate-columns($columnTotal, $breakPoint, $column);
+            @include generate-offsets($columnTotal, $breakPoint, $column);
+        }
+
+        &.aem-Grid--#{$breakPoint}--#{$column} {
+            @include generate-columns($columnTotal, $breakPoint, $column);
+            @include generate-offsets($columnTotal, $breakPoint, $column);
+        }
+    }
+}
+
+/* Generates all the rules for the grids and columns */
+@mixin grid-loop($breakPoint, $columnTotal) {
+    @for $i from 0 through $columnTotal {
+        @if ($i <= $columnTotal) {
+            @include generate-grid-columns($breakPoint, $i, $columnTotal);
+        }
+        > .responsivegrid.aem-GridColumn.aem-GridColumn--#{$breakPoint}--#{$i} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+/* API function to be called to generate a grid config */
+@mixin generate-grid($breakPoint, $columnTotal) {
+    @include grid-loop($breakPoint, $columnTotal);
+
+    > .aem-GridColumn.aem-GridColumn--#{$breakPoint}--newline {
+
+        /* newline behavior */
+        display: block;
+        clear: both;
+    }
+
+    > .aem-GridColumn.aem-GridColumn--#{$breakPoint}--none {
+
+        /* none behavior */
+        display: block;
+        clear: none; // Prevent the clear:both effect of another breakpoint new line
+        float: left; // Enforce the float positioning to maintain the column height and position relative to previous columns
+    }
+
+    > .aem-GridColumn.aem-GridColumn--#{$breakPoint}--hide {
+
+        /* hide behavior */
+        display: none;
+    }
+}

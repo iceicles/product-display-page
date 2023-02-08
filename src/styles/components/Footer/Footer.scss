@@ -1,0 +1,38 @@
+@import 'FooterVariables';
+@import '../../variables';
+
+.footer {
+    &-container {
+        width: 100vw;
+        height: 400px;
+        background-color: $footer-background;
+        color: $footer-primary-font-color;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 12px;
+    }
+
+    &__logo {
+        width: 9.8rem;
+        height: 3.8rem;
+    }
+
+    &__copywrite {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+        font-family: 'Lato', sans-serif;
+        margin-top: 0;
+        text-align: left;
+        color: $footer-secondary-font-color;
+        margin: 0;
+        letter-spacing: 0.04px;
+    }
+}

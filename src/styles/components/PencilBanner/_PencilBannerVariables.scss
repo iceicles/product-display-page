@@ -1,0 +1,6 @@
+@import '../../variables';
+// @import 'sass:map';
+
+$pencil-banner-background: map-get($theme-colors, 'universal-shade-2');
+$pencil-banner-primary-font-color: map-get($theme-colors, 'universal-shade-8');
+$pencil-banner-secondary-font-color: map-get($theme-colors, 'universal-shade-5');

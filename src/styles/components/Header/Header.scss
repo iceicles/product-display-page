@@ -1,0 +1,17 @@
+@import 'HeaderVariables';
+@import '../../variables';
+
+.header-container {
+    width: 100vw;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    background-color: $header-background;
+    color: $header-primary-font-color;
+
+    &__logo {
+        width: 3.875rem;
+        height: 3.444rem;
+        margin: 0;
+    }
+}

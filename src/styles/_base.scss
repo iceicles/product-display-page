@@ -1,0 +1,69 @@
+@import 'variables';
+// @import 'sass:map';
+
+body {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: map-get($theme-colors, 'universal-shade-1');
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    color: inheret;
+}
+
+h1 {
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    color: map-get($theme-colors, 'universal-shade-1');
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    color: map-get($theme-colors, 'universal-shade-1');
+    margin-top: 0;
+}
+
+a {
+    color: map-get($theme-colors, 'universal-shade-1');
+    text-decoration: none;
+    padding-bottom: 3px;
+    background-image: linear-gradient(transparent calc(100% - 1px), map-get($theme-colors, 'universal-shade-1') 1px);
+
+    &:hover,
+    &:focus {
+        color: map-get($theme-colors, 'primary');
+        background-image: linear-gradient(transparent calc(100% - 1px), map-get($theme-colors, 'primary') 1px);
+    }
+}
+
+.product-details__container {
+    margin: 50px 0;
+    display: flex;
+}
+
+hr.separator {
+    &__light {
+        margin: 0;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid map-get($theme-colors, 'universal-shade-5');
+    }
+
+    &__dark {
+        margin: 0;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid map-get($theme-colors, 'universal-shade-3');
+    }
+}

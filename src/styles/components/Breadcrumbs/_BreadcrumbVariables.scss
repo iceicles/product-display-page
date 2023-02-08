@@ -1,0 +1,4 @@
+// @import 'sass:map';
+
+$breadcrumb-separator-color: map-get($theme-colors, 'universal-shade-6');
+$breadcrumb-disabled-color: map-get($theme-colors, 'universal-shade-3');

@@ -1,0 +1,30 @@
+@import './ProductFeatureListVariables';
+@import '../../variables';
+
+.product-features {
+    &__container {
+        margin: 0;
+    }
+
+    &__list {
+        padding: 0 0 0 34px;
+        list-style: none;
+    }
+
+    &__item {
+        margin-bottom: 12px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -34px;
+            width: 24px;
+            height: 24px;
+            background-color: $feature-bullet-background;
+            border-radius: 50%;
+            margin-right: 24px;
+        }
+    }
+}

@@ -1,0 +1,4 @@
+@import '../../variables';
+// @import 'sass:map';
+
+$feature-bullet-background: map-get($theme-colors, 'universal-shade-7');

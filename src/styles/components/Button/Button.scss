@@ -1,0 +1,41 @@
+@import 'ButtonVariables';
+@import '../../variables';
+// @import 'sass:map';
+
+.button {
+    &__primary {
+        background-color: $button-primary-unfocused-color;
+        color: $button-primary-text-color;
+        border: 0 none map-get($theme-colors, 'background');
+        height: 3.5rem;
+        width: 21.5rem;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: $button-cursor;
+        border-radius: $button-border-radius;
+
+        &:hover {
+            background-color: $button-primary-hover-color;
+            border: map-get($theme-colors, 'background');
+            outline: $button-primary-unfocused-color;
+        }
+
+        &:focus,
+        &--focus {
+            background-color: $button-primary-focused-color;
+            border: 2px solid map-get($theme-colors, 'background');
+            outline: $button-primary-unfocused-color;
+        }
+
+        &:active,
+        &--active {
+            background-color: $button-primary-active-color;
+        }
+
+        &:disabled,
+        &--disabled {
+            background-color: $button-primary-disabled-color;
+        }
+    }
+}
